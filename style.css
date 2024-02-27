@@ -33,7 +33,7 @@ body.darkmode {
 }
 
 header {
-    background-color: brown;
+    background-color: var(--pastel-yellow);
     width: auto;
     height: 70px;
     color: white;
