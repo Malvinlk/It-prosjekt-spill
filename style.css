@@ -84,7 +84,7 @@ main {
     font-size: 30px;
     border-radius: 80px;
     border: none;
-    background-color: var(--yellow);
+    background-color: var(--calm-yellow);
 }
 
 .darkmode .startbtn{
