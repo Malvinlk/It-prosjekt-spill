@@ -68,7 +68,6 @@ header a {
     display: flex;
     flex-direction: row;
     line-height: 70px;
-    float: right;
 }
 
 main {
