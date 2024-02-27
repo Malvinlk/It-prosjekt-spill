@@ -87,6 +87,9 @@ main {
     background-color:#89C2D9;
 }
 
+.darkmode .startbtn{
+    color: white;
+}
 #piler{
     display: grid;
     justify-content: center;
