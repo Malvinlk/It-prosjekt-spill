@@ -25,6 +25,7 @@
 
 body {
     color: black;
+    background-color: var(--pastel-yellow);
 }
 
 body.darkmode {
@@ -33,7 +34,7 @@ body.darkmode {
 }
 
 header {
-    background-color: var(--pastel-yellow);
+    background-color: var(--subtle-darker-yellow);
     width: auto;
     height: 70px;
     color: white;
