@@ -89,6 +89,7 @@ main {
 
 .darkmode .startbtn{
     color: white;
+    background-color: var(--grey-blue);
 }
 #piler{
     display: grid;
