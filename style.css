@@ -61,7 +61,7 @@ header a {
     color: black;
 }
 
-.darkmode header {
+.darkmode header a {
     color: white;
 }
 .meny {
