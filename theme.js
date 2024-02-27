@@ -12,6 +12,9 @@ function darkmode() {
     if (header) { 
         header.classList.add("darkmode");
     }
+
+
+
 }
 function clock() {
     const now = new Date();
