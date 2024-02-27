@@ -42,9 +42,9 @@ header {
 }
 
 header.darkmode {
-    background-color:var(--light-grey-blue);
-    color:white;
-    text-decoration:none;
+    background-color: var(--light-grey-blue);
+    color: white;
+    text-decoration: none;
 
 }
 
@@ -64,10 +64,16 @@ header a {
 .darkmode header a {
     color: white;
 }
-.meny {
+
+.link {
     display: flex;
     flex-direction: row;
+}
+
+.meny {
+    display: flex;
     line-height: 70px;
+    justify-content: space-between;
 }
 
 main {
@@ -86,16 +92,17 @@ main {
     background-color: var(--calm-yellow);
 }
 
-.darkmode .startbtn{
+.darkmode .startbtn {
     color: white;
     background-color: var(--grey-blue);
 }
-#piler{
+
+#piler {
     display: grid;
     justify-content: center;
 }
 
-#piler p{
+#piler p {
     font-size: 35px;
     margin-top: 70px;
 }
