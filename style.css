@@ -13,8 +13,8 @@
     --yellow: #FFD000;
     --light-yellow: #FFDD00;
     --lighest-yellow: #FFEA00;
-    --pastel-yellow: #fff494;
-    --subtle-darker-yellow: #f6ae2d;
+    --pastel-yellow: #fcf6bd;
+    --calm-yellow: #ffd972;
 }
 
 * {
@@ -34,7 +34,7 @@ body.darkmode {
 }
 
 header {
-    background-color: var(--subtle-darker-yellow);
+    background-color: var(--calm-yellow);
     width: auto;
     height: 70px;
     color: white;
@@ -84,7 +84,7 @@ main {
     font-size: 30px;
     border-radius: 80px;
     border: none;
-    background-color:#89C2D9;
+    background-color: var(--yellow);
 }
 
 #piler{
