@@ -104,6 +104,15 @@ main {
     background-size: cover;
 }
 
+.overskrift {
+    font-size: 50px;
+    position: fixed;
+    bottom: 250px;
+    margin: 0 auto;
+    color: white;
+}
+
+
 .startbtn {
     width: 250px;
     height: 100px;
