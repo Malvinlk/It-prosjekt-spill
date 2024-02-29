@@ -5,6 +5,10 @@ function lightmode() {
 function darkmode() {
     document.body.classList.add("darkmode")
 }
+
+
+
+
 function clock() {
     const now = new Date();
     const canvas = document.getElementById("canvas");
