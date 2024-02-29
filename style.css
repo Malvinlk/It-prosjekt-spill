@@ -188,3 +188,9 @@ main {
     
 }
 /*SLUTT 2D-SPill eksempler*/
+
+.eksempler{
+    background-image: none;
+    background-color: var(--pastel-yellow);
+}
+
