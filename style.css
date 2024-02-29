@@ -15,6 +15,10 @@
     --lighest-yellow: #FFEA00;
     --pastel-yellow: #fcf6bd;
     --calm-yellow: #ffd972;
+
+    --stor-font: 5rem;
+    --h2-font: 2.5rem;
+    --p-font: 1.06rem;
 }
 
 * {
@@ -124,4 +128,43 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+
+
+
+
+#forsideid {
+    padding: 70px 17%;
+}
+
+.forside {
+    margin-top: 85px;
+    width: 100%;
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+    align-items: center;
+}
+
+.forsidebilde img {
+    max-width: 100%;
+    width: 600px;
+    height: auto;
+}
+
+.hjem-tekst h1 {
+    font-size: var(--stor-font);
+    color: var(--primary);
+    font-family: DGOR;
+}
+
+.hjem-tekst h2 {
+    font-size: var(--h2-font);
+    color: white;
+    font-family: DGOR;
+    margin: 1rem 0 2rem;
+    text-shadow: 2px 0 var(--secondarydark), -2px 0 var(--secondarydark), 0 2px var(--secondarydark), 0 -2px var(--secondarydark),
+        1px 1px var(--secondarydark), -1px -1px var(--secondarydark), 1px -1px var(--secondarydark), -1px 1px var(--secondarydark);
 }
