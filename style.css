@@ -183,7 +183,6 @@ main {
 
 .hjem-tekst h2 {
     font-size: var(--h2-font);
-    color: white;
     margin: 1rem 0 2rem;
     
 }
