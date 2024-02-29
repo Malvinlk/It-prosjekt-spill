@@ -112,7 +112,7 @@ main {
 .overskrift {
     font-size: 50px;
     color: white;
-    position: fixed;
+    position: absolute;
 }
 
 
