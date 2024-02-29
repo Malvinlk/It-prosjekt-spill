@@ -69,10 +69,15 @@ header a {
     line-height: 70px;
 }
 
+.link{
+    display: flex;
+    flex-direction: row;
+}
+
 main {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    line-height: 70px;
+    justify-content: space-between;
 }
 
 .startbtn {
