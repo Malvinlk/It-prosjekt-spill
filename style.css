@@ -106,11 +106,8 @@ main {
     border-radius: 80px;
     border: none;
     background-color: var(--calm-yellow);
-    position: fixed;
-    left: 50%;
-    bottom: 20px;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
+    align-self: flex-end;
+    margin-bottom: 20px;
 }
 
 .darkmode .startbtn {
@@ -133,4 +130,8 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.info {
+    height: 900px;
 }
