@@ -46,31 +46,31 @@ header {
 }
 
 .darkmode header {
-    background-color:var(--light-grey-blue);
-    color:white;
-    text-decoration:none;
+    background-color: var(--light-grey-blue);
+    color: white;
+    text-decoration: none;
 
 }
 
 .ikonknapp {
     border: none;
-    padding: 12px 16px;
+    padding-right: 30px;
     background: none;
+    font-size: 20px;
+    line-height: normal;
 }
 
 .sol {
     display: none;
 }
 
-.darkmode .sol{
+.darkmode .sol {
     display: inline-block;
 }
 
 .darkmode .maane {
     display: none;
 }
-
-
 
 header a {
     margin-left: 20px;
@@ -81,13 +81,14 @@ header a {
 .darkmode header a {
     color: white;
 }
+
 .meny {
     display: flex;
     line-height: 70px;
     justify-content: space-between;
 }
 
-.link{
+.link {
     display: flex;
     flex-direction: row;
 }
@@ -96,29 +97,37 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    background-image: url("bilder/forside.jpg");
+    background-color: #cccccc;
+    height: 700px;
+    background-size: cover;
 }
 
 .startbtn {
     width: 250px;
     height: 100px;
-    margin-top: 200px;
     font-size: 30px;
     border-radius: 80px;
     border: none;
     background-color: var(--calm-yellow);
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
 }
 
-.darkmode .startbtn{
+.darkmode .startbtn {
     color: white;
     background-color: var(--grey-blue);
 }
-#piler{
+
+#piler {
     display: grid;
     justify-content: center;
 }
 
-#piler p{
+#piler p {
     font-size: 35px;
     margin-top: 70px;
 }
