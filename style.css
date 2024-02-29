@@ -73,6 +73,11 @@ header {
     display: none;
 }
 
+header {
+    position: fixed;
+    width: 100%;
+}
+
 header a {
     margin-left: 20px;
     text-decoration: none;
@@ -106,10 +111,8 @@ main {
 
 .overskrift {
     font-size: 50px;
-    position: fixed;
-    bottom: 250px;
-    margin: 0 auto;
     color: white;
+    position: fixed;
 }
 
 
