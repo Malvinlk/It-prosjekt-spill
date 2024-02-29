@@ -25,6 +25,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Dosis';
 }
 
 body {
@@ -72,6 +73,11 @@ header {
     display: none;
 }
 
+header {
+    position: fixed;
+    width: 100%;
+}
+
 header a {
     margin-left: 20px;
     text-decoration: none;
@@ -103,6 +109,13 @@ main {
     background-size: cover;
 }
 
+.overskrift {
+    font-size: 50px;
+    color: white;
+    position: absolute;
+}
+
+
 .startbtn {
     width: 250px;
     height: 100px;
@@ -110,11 +123,8 @@ main {
     border-radius: 80px;
     border: none;
     background-color: var(--calm-yellow);
-    position: fixed;
-    left: 50%;
-    bottom: 20px;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
+    align-self: flex-end;
+    margin-bottom: 20px;
 }
 
 .darkmode .startbtn {
@@ -138,6 +148,14 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.info {
+    height: 900px;
+}
+
+
+
+
 
 #forsideid {
     padding: 70px 17%;
