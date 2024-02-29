@@ -156,7 +156,7 @@ main {
 
 
 
-
+/*START 2D-spill eksempler*/
 #forsideid {
     padding: 70px 17%;
 }
@@ -179,15 +179,17 @@ main {
 
 .hjem-tekst h1 {
     font-size: var(--stor-font);
-    color: var(--primary);
-    font-family: DGOR;
 }
 
 .hjem-tekst h2 {
     font-size: var(--h2-font);
-    color: white;
-    font-family: DGOR;
     margin: 1rem 0 2rem;
-    text-shadow: 2px 0 var(--secondarydark), -2px 0 var(--secondarydark), 0 2px var(--secondarydark), 0 -2px var(--secondarydark),
-        1px 1px var(--secondarydark), -1px -1px var(--secondarydark), 1px -1px var(--secondarydark), -1px 1px var(--secondarydark);
+    
 }
+/*SLUTT 2D-SPill eksempler*/
+
+.eksempler{
+    background-image: none;
+    background-color: var(--pastel-yellow);
+}
+
