@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canvas Game</title>
+<style>
+    canvas {
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url(bilder/bakgrunn_spill.jpg);
+        background-repeat: repeat-x;
+        background-size: contain;
+    }
+</style>
+</head>
+<body>
+<canvas id="gameCanvas" width="1250" height="530"></canvas>
+<div id="score"></div>
+
+<script>
+    var canvas = document.getElementById("gameCanvas");
+    var ctx = canvas.getContext("2d");
+    var score_spill = 0
+    var character = {
+        x: 50,
+        y: 370,
+        width: 50,
+        height: 50,
+        color: "blue"
+        
+    };
+
+    var object = {
+        x: Math.random() * 1200,
+        y: 0,
+        width: 50,
+        height: 50,
+        color: "red",
+        speed: 2
+    };
+
+    function drawCharacter() {
+        ctx.fillStyle = character.color;
+        ctx.fillRect(character.x, character.y, character.width, character.height);
+    }
+
+    function drawObject() {
+        ctx.fillStyle = object.color;
+        ctx.fillRect(object.x, object.y, object.width, object.height);
+    }
+
+    function moveCharacter(event) {
+        if (event.key === "ArrowRight") {
+            character.x += 20;
+        } else if (event.key === "ArrowLeft") {
+            character.x -= 20;
+        }
+    }
+
+    function fall() {
+        if (object.y < canvas.height - 120 - object.height) {
+            object.y += object.speed;
+        } else {
+            object.x = Math.random() * 1200;
+            object.y = 0;
+        }
+    }
+
+    function checkCollision() {
+        if (character.x < object.x + object.width &&
+            character.x + character.width > object.x &&
+            character.y < object.y + object.height &&
+            character.y + character.height > object.y) {
+            console.log("Character caught the falling object!");
+            object.x = Math.random() * 1200;
+            object.y = 0;
+            score ++
+            document.getElementById("score").innerText = score
+        }
+    }
+
+    function updateCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawCharacter();
+        drawObject();
+        fall();
+        checkCollision();
+        requestAnimationFrame(updateCanvas);
+    }
+
+    document.addEventListener("keydown", function (event) {
+        moveCharacter(event);
+    });
+
+    updateCanvas();
+</script>
+</body>
+</html>

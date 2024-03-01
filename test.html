@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canvas Game</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    canvas {
+        display: block;
+    }
+</style>
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+
+<script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let x_posisjon = 50;
+    let y_posisjon = canvas.height - 100;
+
+    let isJumping = false;
+    let jumpCount = 0;
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowRight") {
+            x_posisjon += 10;
+            event.preventDefault();
+        } else if (event.key === "ArrowLeft") {
+            x_posisjon -= 10;
+            event.preventDefault();
+        } else if (event.key === " ") {
+            if (!isJumping) {
+                isJumping = true;
+                jumpCount = 0;
+            }
+            event.preventDefault();
+        }
+    });
+
+    function drawCharacter() {
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(x_posisjon, y_posisjon, 50, 50);
+    }
+
+    function jump() {
+        if (isJumping) {
+            if (jumpCount < 30) {
+                y_posisjon -= 10;
+            } else if (jumpCount >= 30 && jumpCount < 60) {
+                y_posisjon += 10;
+            } else {
+                isJumping = false;
+            }
+            jumpCount++;
+        }
+    }
+
+    function gameLoop() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        jump();
+        drawCharacter();
+
+        requestAnimationFrame(gameLoop);
+    }
+
+    gameLoop();
+</script>
+</body>
+</html>
