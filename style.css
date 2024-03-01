@@ -15,12 +15,17 @@
     --lighest-yellow: #FFEA00;
     --pastel-yellow: #fcf6bd;
     --calm-yellow: #ffd972;
+
+    --stor-font: 5rem;
+    --h2-font: 2.5rem;
+    --p-font: 1.06rem;
 }
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Dosis';
 }
 
 body {
@@ -41,18 +46,36 @@ header {
 
 }
 
-header.darkmode {
-    background-color:var(--light-grey-blue);
-    color:white;
-    text-decoration:none;
+.darkmode header {
+    background-color: var(--light-grey-blue);
+    color: white;
+    text-decoration: none;
 
 }
 
-
 .ikonknapp {
     border: none;
-    padding: 12px 16px;
+    padding-right: 30px;
     background: none;
+    font-size: 20px;
+    line-height: normal;
+}
+
+.sol {
+    display: none;
+}
+
+.darkmode .sol {
+    display: inline-block;
+}
+
+.darkmode .maane {
+    display: none;
+}
+
+header {
+    position: fixed;
+    width: 100%;
 }
 
 header a {
@@ -64,39 +87,57 @@ header a {
 .darkmode header a {
     color: white;
 }
+
 .meny {
     display: flex;
-    flex-direction: row;
     line-height: 70px;
-    float: right;
+    justify-content: space-between;
+}
+
+.link {
+    display: flex;
+    flex-direction: row;
 }
 
 main {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url("bilder/forside.jpg");
+    background-color: #cccccc;
+    height: 780px;
+    background-size: cover;
 }
+
+.overskrift {
+    font-size: 50px;
+    color: white;
+    position: absolute;
+}
+
 
 .startbtn {
     width: 250px;
     height: 100px;
-    margin-top: 200px;
     font-size: 30px;
     border-radius: 80px;
     border: none;
     background-color: var(--calm-yellow);
+    align-self: flex-end;
+    margin-bottom: 20px;
 }
 
-.darkmode .startbtn{
+.darkmode .startbtn {
     color: white;
     background-color: var(--grey-blue);
 }
-#piler{
+
+#piler {
     display: grid;
     justify-content: center;
 }
 
-#piler p{
+#piler p {
     font-size: 35px;
     margin-top: 70px;
 }
@@ -107,3 +148,48 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.info {
+    height: 900px;
+}
+
+
+
+
+/*START 2D-spill eksempler*/
+#forsideid {
+    padding: 70px 17%;
+}
+
+.forside {
+    margin-top: 85px;
+    width: 100%;
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+    align-items: center;
+}
+
+.forsidebilde img {
+    max-width: 100%;
+    width: 600px;
+    height: auto;
+}
+
+.hjem-tekst h1 {
+    font-size: var(--stor-font);
+}
+
+.hjem-tekst h2 {
+    font-size: var(--h2-font);
+    margin: 1rem 0 2rem;
+    
+}
+/*SLUTT 2D-SPill eksempler*/
+
+.eksempler{
+    background-image: none;
+    background-color: var(--pastel-yellow);
+}
+
