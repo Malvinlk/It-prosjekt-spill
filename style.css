@@ -162,12 +162,12 @@ header a {
     margin-top: 70px;
 }
 
-#pilknapper {
+/* #pilknapper {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+} */
 
 .info {
     height: 900px;
