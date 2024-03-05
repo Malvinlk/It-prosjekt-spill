@@ -99,7 +99,7 @@ header a {
     flex-direction: row;
 }
 
-.forside {
+.forsidemain {
     display: flex;
     align-items: center;
     justify-content: center;
