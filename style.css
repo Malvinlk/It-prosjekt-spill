@@ -213,9 +213,12 @@ header a {
 
 
 #footer-main {
-    background-color: lightpink;
+    background-color: var(--calm-yellow);
+    color: black;
     padding: 20px;
   }
+
+
   
   .footer-grid {
     display: grid;
@@ -238,3 +241,7 @@ header a {
     font-size: 30px;
   }
   
+  .darkmode #footer-main{
+    background-color: var(--light-grey-blue);
+    color: white;
+  }
