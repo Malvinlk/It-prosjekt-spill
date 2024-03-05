@@ -209,6 +209,21 @@ header a {
     border-radius: 5%;
     width: 100%;
 }
+
+.quizbtn {
+    width: 150px;
+    height: 70px;
+    margin-top: 20px;
+    font-size: 20px;
+    border-radius: 80px;
+    border: none;
+    background-color: var(--calm-yellow);
+}
+
+.darkmode .quizbtn {
+    color: white;
+    background-color: var(--grey-blue);
+}
 /*SLUTT 2D-SPill eksempler*/
 
 
@@ -220,8 +235,6 @@ header a {
     padding: 20px;
   }
 
-
-  
   .footer-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
