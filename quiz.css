@@ -72,7 +72,7 @@ ul li label {
 }
 
 .quiz-container button {
-    background-color: #03cae4;
+    background-color: var(--calm-yellow);
     color: #FFF;
     border: none;
     display: block;
@@ -82,14 +82,26 @@ ul li label {
     padding: 1.3rem;
 }
 
+.darkmode .quiz-container button {
+    background-color: var(--light-grey-blue);
+}
+
 .quiz-container button:hover {
-    background-color: #04adc4;
+    background-color: var(--calm-yellow);
+}
+
+.darkmode .quiz-container button:hover {
+    background-color: var(--light-grey-blue);
 }
 
 .quiz-container button:focus {
     outline: none;
-    background-color: #013A63;
+    background-color: var(--dark-yellow);
 
+}
+
+.darkmode .quiz-container button:focus {
+    background-color: var(--grey-blue);
 }
 
 .darkmode .quiz-main{
