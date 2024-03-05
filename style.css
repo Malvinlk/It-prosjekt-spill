@@ -209,6 +209,64 @@ header a {
     border-radius: 5%;
     width: 100%;
 }
+
+#forsideid p {
+    color: var(--primary);
+    font-family: DGOR;
+}
+
+#andre-artister-section2 {
+    background: white;
+}
+
+.forside-konserter-section {
+    background-color: var(--primary);
+}
+
+#forside-overskrift-konserter span {
+    color: white;
+    text-shadow: 2px 0 var(--secondarydark), -2px 0 var(--secondarydark), 0 2px var(--secondarydark), 0 -2px var(--secondarydark),
+        1px 1px var(--secondarydark), -1px -1px var(--secondarydark), 1px -1px var(--secondarydark), -1px 1px var(--secondarydark);
+}
+
+#forside-overskrift-konserter h2 {
+    color: #3aa6d9;
+    text-shadow: 2px 0 var(--secondarydark), -2px 0 var(--secondarydark), 0 2px var(--secondarydark), 0 -2px var(--secondarydark),
+        1px 1px var(--secondarydark), -1px -1px var(--secondarydark), 1px -1px var(--secondarydark), -1px 1px var(--secondarydark);
+
+}
+
+.forside-konserter-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+    grid-gap: 1.5rem;
+}
+
+.forside-konserter-box {
+    text-align: center;
+    padding: 20px 30px;
+}
+
+.forside-konserter-box img {
+    width: 100%;
+    border-radius: 10%;
+}
+
+.forside-konserter-box h3 {
+    margin: 4px 0 10px;
+    color: #3aa6d9;
+    font-size: 1.2rem;
+    font-family: DGOR;
+
+}
+
+.forside-konserter-box p {
+    line-height: 1.7;
+    font-family: DGOR;
+    color: white;
+    text-shadow: 2px 0 var(--secondarydark), -2px 0 var(--secondarydark), 0 2px var(--secondarydark), 0 -2px var(--secondarydark),
+        1px 1px var(--secondarydark), -1px -1px var(--secondarydark), 1px -1px var(--secondarydark), -1px 1px var(--secondarydark);
+}
 /*SLUTT 2D-SPill eksempler*/
 
 
@@ -247,3 +305,4 @@ header a {
     background-color: var(--light-grey-blue);
     color: white;
   }
+
