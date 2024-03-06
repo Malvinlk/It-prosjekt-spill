@@ -23,6 +23,9 @@
                 <h2><a href="#footer-main"> Om oss </a></h2>
             </div>
             <div>
+                <button onclick="sound()" class="ikonknapp lyd"><i class="fa-solid fa-volume-high"></i></button>
+                <button onclick="mute()" class="ikonknapp ilyd"><i class="fa-solid fa-volume-xmark"></i></button>
+
                 <button onclick="lightmode()" class="ikonknapp sol"><i class="fa-regular fa-sun"
                         style="color:#FFB700;"></i></button>
                 <button onclick="darkmode()" class="ikonknapp maane"><i class="fa-regular fa-moon"
@@ -30,6 +33,16 @@
             </div>
         </section>
     </header>
+
+    <div class="music">
+        <div class="innermusic">
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/9by72PbEiZE?si=Zls_f_KodYfa2rxC" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </div>
 
     <main class="forsidemain">
         <h1 class="overskrift">NAVN PÅ SPILL</h1>
@@ -53,7 +66,8 @@
                 Dataspillindustrien er i dag en av verdens største underholdningsbransjer fra et økonomisk
                 perspektiv.<br><br>
 
-                Donkey Kong var et av de første spillene fra Nintendo. Denne utgaven fra 1982 viser helten Jumpman (som
+                På bildet kan du se spillet Donkey Kong, som var et av de første spillene fra Nintendo. Denne utgaven
+                fra 1982 viser helten Jumpman (som
                 i senere spill fikk navnet Mario) øverst til venstre; for å redde prinsessen (øverst i midten) må han
                 hoppe over tønnene som monsteret Donkey Kong (øverst til høyre) kaster mot ham.
             </p>
@@ -87,6 +101,7 @@
 
     <script src="javascript.js"></script>
     <script src="theme.js"></script>
+    <script src="bakgrunnsmusikk.js"></script>
 </body>
 
 </html>
