@@ -4,13 +4,11 @@ const spillKnapp = document.querySelector(".ikonknapp.lyd");
 const muteKnapp = document.querySelector(".ikonknapp.ilyd");
 
 function sound() {
-    musikk.classList.add("active");
-
     let iframe = document.createElement("iframe");
     iframe.setAttribute("src", "https://www.youtube.com/embed/68ugkg9RePc?si=ysy0IdXpoMxJbyyT&autoplay=1&rel=0");
     /* &autoplay=1&rel=0 */
 
-    iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+    iframe.setAttribute("allow", "autoplay");
 
     iframe.classList.add("musicv");
 
@@ -22,8 +20,7 @@ function sound() {
 }
 
 function mute() {
-    var musikkv = document.getElementsByClassName("musicv")[0];
-    musikk.classList.remove("active");
+    const musikkv = document.getElementsByClassName("musicv")[0];
 
     musikkv.remove();
     // Vise "spill"-knappen, OG skjule "mute"-knappen
