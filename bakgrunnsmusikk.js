@@ -1,5 +1,7 @@
-var musikk = document.getElementsByClassName("music")[0],
-    imusikk = document.getElementsByClassName("innermusic")[0];
+const musikk = document.getElementsByClassName("music")[0];
+const imusikk = document.getElementsByClassName("innermusic")[0];
+const spillKnapp = document.querySelector(".ikonknapp.lyd");
+const muteKnapp = document.querySelector(".ikonknapp.ilyd");
 
 function sound() {
     musikk.classList.add("active");
@@ -13,6 +15,10 @@ function sound() {
     iframe.classList.add("musicv");
 
     imusikk.append(iframe);
+
+    // Skjule "spill"-knappen, OG vis "mute"-knappen
+    spillKnapp.style.display = "none";
+    muteKnapp.style.display = "inline-block";
 }
 
 function mute() {
@@ -20,4 +26,7 @@ function mute() {
     musikk.classList.remove("active");
 
     musikkv.remove();
+    // Vise "spill"-knappen, OG skjule "mute"-knappen
+    spillKnapp.style.display = "inline-block";
+    muteKnapp.style.display = "none";
 }

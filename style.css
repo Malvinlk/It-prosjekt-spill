@@ -326,3 +326,11 @@ footer section {
 iframe {
     display: none;
 }
+
+.lyd {
+    display: inline-block;
+}
+
+.ilyd {
+    display: none;
+}
