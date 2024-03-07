@@ -111,8 +111,13 @@ header a {
 
 .overskrift {
     font-size: 50px;
-    color: var(--darkest-blue);
+    color: white;
     position: absolute;
+    text-shadow: 0 0 3px #ffd000, 0 0 5px #ffd000;
+}
+
+.darkmode .overskrift {
+    text-shadow: 0 0 3px #0401cd, 0 0 5px #0401cd;
 }
 
 .grid-section {
