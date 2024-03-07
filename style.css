@@ -113,6 +113,11 @@ header a {
     font-size: 50px;
     color: white;
     position: absolute;
+    text-shadow: 0 0 3px #ffd000, 0 0 5px #ffd000;
+}
+
+.darkmode .overskrift {
+    text-shadow: 0 0 3px #0401cd, 0 0 5px #0401cd;
 }
 
 .grid-section {
@@ -148,16 +153,16 @@ header a {
     background-color: var(--grey-blue);
 }
 
-#piler {
+/* .hows {
     display: grid;
     justify-content: center;
     margin-top: 50px;
 }
 
-#piler p {
+.hows p {
     font-size: 35px;
-    margin-top: 70px;
-}
+    /* margin-top: 70px; }*/
+
 
 /*
 #pilknapper {
@@ -168,12 +173,45 @@ header a {
 }
 */
 
-.howmain {
+/* .howmain {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     height: auto;
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; }*/
+
+/* 
+.howmain img{
+    height: 300px;
+    width: 500px;
+} */
+
+.howmain {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 5%;
+    margin: 0 50px;
+}
+
+.spillere_galleri li, h1 {
+    font-size: 23px;
+
+    color: var(--lighest-yellow);
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
 }
 
 
+.spillere_galleri div {
+    background-color: var(--lighest-yellow);
+}
+
+.spillere_galleri img{
+    width: 400px;
+}
 
 
 
@@ -333,4 +371,13 @@ iframe {
 
 .ilyd {
     display: none;
+}
+
+.startbtn a {
+    text-decoration: none;
+    color: black;
+}
+
+.darkmode .startbtn a {
+    color: white;
 }

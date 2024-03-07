@@ -19,6 +19,11 @@
                 <h2 class="hvordan spille?"><a href="howtoplay.html"> Hvordan spille </a></h2>
             </div>
             <div>
+                <button onclick="sound()" class="ikonknapp lyd"><i class="fa-solid fa-volume-high"
+                        style="color: #fff;"></i></button>
+                <button onclick="mute()" class="ikonknapp ilyd"><i class="fa-solid fa-volume-xmark"
+                        style="color: #fff;"></i></button>
+
                 <button onclick="lightmode()" class="ikonknapp sol"><i class="fa-regular fa-sun"
                         style="color:#FFB700;"></i></button>
                 <button onclick="darkmode()" class="ikonknapp maane"><i class="fa-regular fa-moon"
@@ -26,6 +31,15 @@
             </div>
         </section>
     </header>
+
+    <div class="music">
+        <div class="innermusic">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/68ugkg9RePc?si=ysy0IdXpoMxJbyyT"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </div>
 
     <main>
 
@@ -35,7 +49,7 @@
                 <h2>Det finnes mange <br> ikoniske 2D-spill </h2>
                 <p>fiefiefshifhsefhseiufhsuiehfsufhisuehfiseuhfisuhfiusehfiusehfisuehfsuehfiusefhisuehf </p>
             </div>
-    
+
             <div class="forsidebilde">
                 <img src="bilder/game-console.png" alt="airpods og mobil">
             </div>
@@ -47,36 +61,41 @@
                     <Span>De mest populære</Span>
                     <h2>De tre kanskje mest kjente norske artistene</h2>
                 </div>
-    
+
                 <div class="forside-konserter-container">
                     <div class="forside-konserter-box">
                         <img src="bilder/alan-walker.jpg" alt="Alan Walker">
                         <h3>Alan Walker</h3>
-                        <p>Alan Walker er en norsk-britisk musikkprodusent og DJ. Han er mest kjent for sin hit “Faded”, som
-                            har over 2,8 milliarder visninger på YouTube. I 2019 ble han kåret til årets spellemann under
+                        <p>Alan Walker er en norsk-britisk musikkprodusent og DJ. Han er mest kjent for sin hit “Faded”,
+                            som
+                            har over 2,8 milliarder visninger på YouTube. I 2019 ble han kåret til årets spellemann
+                            under
                             Spellemannprisen 2018 </p>
                     </div>
-    
+
                     <div class="forside-konserter-box">
                         <img src="bilder/kygo.jpg" alt="Kygo">
                         <h3>Kygo</h3>
-                        <p>Kygo er en norsk DJ, musikkprodusent og låtskriver. Han er kjent for sin tropiske housemusikk og
+                        <p>Kygo er en norsk DJ, musikkprodusent og låtskriver. Han er kjent for sin tropiske housemusikk
+                            og
                             har samarbeidet med flere kjente artister, inkludert Selena Gomez og Whitney Houston.</p>
                     </div>
-    
+
                     <div class="forside-konserter-box">
                         <img src="bilder/marcus-martinus.jpg" alt="Marcus & Martinus">
                         <h3>Marcus & Martinus</h3>
-                        <p>Marcus og Martinus er en norsk popduo bestående av tvillingbrødrene Marcus og Martinus Gunnarsen.
+                        <p>Marcus og Martinus er en norsk popduo bestående av tvillingbrødrene Marcus og Martinus
+                            Gunnarsen.
                             De ble kjent etter å ha vunnet den norske sangkonkurransen Melodi Grand Prix Junior</p>
                     </div>
                 </div>
             </div>
         </section>
-        
+
     </main>
     <!-- <script src="javascript.js"></script> -->
     <script src="theme.js"></script>
+    <script src="bakgrunnsmusikk.js"></script>
 </body>
 
 </html>
