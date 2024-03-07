@@ -1,101 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Canvas Game</title>
-<style>
-    canvas {
-        border: 1px solid black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-image: url(bilder/bakgrunn_spill.jpg);
-        background-repeat: repeat-x;
-        background-size: contain;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Game</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            /*display: flex;*/
+            align-items: center;
+            justify-content: center;
+            background-image: url(bilder/bakgrunn_spill.jpg);
+            background-repeat: repeat-x;
+            background-size: contain;
+            width: 100%;
+            transition: 0.2s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #Startknapp {
+            position: absolute;
+            top: 25%;
+            left: 38%;
+            border-radius: 10%;
+            background: lightcyan;
+            font-size: 120px;
+            padding: 20px;
+            color: white;
+            font-weight: bold;
+            text-shadow:
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+    </style>
 </head>
+
 <body>
-<canvas id="gameCanvas" width="1250" height="530"></canvas>
-<div id="score"></div>
+    <canvas id="gameCanvas" width="1250" height="530"></canvas>
+    <button id="Startknapp" onclick="startknapp()">Start</button>
 
-<script>
-    var canvas = document.getElementById("gameCanvas");
-    var ctx = canvas.getContext("2d");
-    var score_spill = 0
-    var character = {
-        x: 50,
-        y: 370,
-        width: 50,
-        height: 50,
-        color: "blue"
-        
-    };
+    <script>
+        var canvas = document.getElementById("gameCanvas");
+        var ctx = canvas.getContext("2d");
 
-    var object = {
-        x: Math.random() * 1200,
-        y: 0,
-        width: 50,
-        height: 50,
-        color: "red",
-        speed: 2
-    };
+        let vcxr = 0;
+        let vcxl = 0;
+        var character = {
+            x: 400,
+            y: 330,
+            width: 70,
+            height: 90,
+            vcxl: 0,
+            vcxr: 0,
+            img: new Image()
+        };
 
-    function drawCharacter() {
-        ctx.fillStyle = character.color;
-        ctx.fillRect(character.x, character.y, character.width, character.height);
-    }
+        // Set the source of the image for character
+        character.img.src = "bilder/karakter_br.png";
+        character.img.height = "100px"
+        character.img.width = "100px"
 
-    function drawObject() {
-        ctx.fillStyle = object.color;
-        ctx.fillRect(object.x, object.y, object.width, object.height);
-    }
+        var object = {
+            x: Math.random() * 1200,
+            y: 0,
+            width: 50,
+            height: 50,
+            color: "red",
+            speed: 2,
+            img: new Image()
 
-    function moveCharacter(event) {
-        if (event.key === "ArrowRight") {
-            character.x += 20;
-        } else if (event.key === "ArrowLeft") {
-            character.x -= 20;
+        };
+
+        // Set the source of the image for object3
+        object.img.src = "bilder/5points.png";
+        object.img.height = "30px"
+        object.img.width = "30px"
+
+        var object2 = {
+            x: Math.random() * 1200,
+            y: 0,
+            width: 50,
+            height: 50,
+            speed: 1.8,
+            img: new Image()
+        };
+
+        // Set the source of the image for object3
+        object2.img.src = "bilder/10points.png";
+        object2.img.height = "30px"
+        object2.img.width = "30px"
+
+        var object3 = {
+            x: Math.random() * 1200,
+            y: 0,
+            width: 50,
+            height: 50,
+            speed: 1.5,
+            img: new Image()
+        };
+
+        // Set the source of the image for object3
+        object3.img.src = "bilder/bombe1.png";
+        object3.img.height = "30px"
+        object3.img.width = "30px"
+
+        var object4 = {
+            x: Math.random() * 1200,
+            y: 0,
+            width: 50,
+            height: 50,
+            speed: 1.5,
+            img: new Image()
+        };
+
+        // Set the source of the image for object3
+        object4.img.src = "bilder/bombe1.png";
+        object4.img.height = "30px"
+        object4.img.width = "30px"
+
+
+        function drawCharacter() {
+            ctx.fillStyle = character.color;
+            //ctx.fillRect(character.x, character.y, character.width-20, character.height-20);
+            ctx.drawImage(character.img, character.x, character.y, character.width, character.height);
         }
-    }
 
-    function fall() {
-        if (object.y < canvas.height - 120 - object.height) {
-            object.y += object.speed;
-        } else {
-            object.x = Math.random() * 1200;
-            object.y = 0;
+        function drawObject(obj) {
+            ctx.fillStyle = obj.color;
+            //ctx.fillRect(obj.x, obj.y, obj.width, obj.height);
+            ctx.drawImage(obj.img, obj.x, obj.y, obj.width, obj.height);
         }
-    }
 
-    function checkCollision() {
-        if (character.x < object.x + object.width &&
-            character.x + character.width > object.x &&
-            character.y < object.y + object.height &&
-            character.y + character.height > object.y) {
-            console.log("Character caught the falling object!");
-            object.x = Math.random() * 1200;
-            object.y = 0;
-            score ++
-            document.getElementById("score").innerText = score
+        addEventListener("keydown", function (e) {
+            if (e.code == "ArrowRight") {
+                vcxr = 6;
+            }
+            if (e.code == "ArrowLeft") {
+                vcxl = -6;
+            }
+        });
+
+        addEventListener("keyup", function (e) {
+            if (e.code == "ArrowRight") {
+                vcxr = 0;
+            }
+            if (e.code == "ArrowLeft") {
+                vcxl = 0;
+            }
+        });
+
+        function fall(obj) {
+            if (obj.y < canvas.height - 110 - obj.height) {
+                obj.y += obj.speed;
+            } else {
+                obj.x = Math.random() * 1200;
+                obj.y = 0;
+            }
         }
-    }
 
-    function updateCanvas() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawCharacter();
-        drawObject();
-        fall();
-        checkCollision();
-        requestAnimationFrame(updateCanvas);
-    }
+        var score = 0;
+        var gameDuration = 20; // Duration of the game in seconds
 
-    document.addEventListener("keydown", function (event) {
-        moveCharacter(event);
-    });
 
-    updateCanvas();
-</script>
+        function checkCollision(obj) {
+            if (character.x < obj.x + obj.width &&
+                character.x + character.width > obj.x &&
+                character.y < obj.y + obj.height &&
+                character.y + character.height > obj.y) {
+                if (obj === object) {
+                    score += 5;
+                } else if (obj === object2) {
+                    score += 10;
+                } else if (obj === object3 || obj === object4) {
+                    score -= 50;
+                }
+                obj.x = Math.random() * 1200;
+                obj.y = 0;
+                obj.speed = Math.random() * 2 + 1.3
+            }
+        }
+
+        function updateCanvas() {
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw character
+            drawCharacter();
+
+            // Draw and handle collisions for each object
+            drawObject(object);
+            fall(object);
+            checkCollision(object);
+
+            drawObject(object2);
+            fall(object2);
+            checkCollision(object2);
+
+            drawObject(object3);
+            fall(object3);
+            checkCollision(object3);
+
+            drawObject(object4);
+            fall(object4);
+            checkCollision(object4);
+
+            // Display score
+            ctx.font = "20px Arial";
+            ctx.fillStyle = "black";
+            ctx.fillText("Score: " + score, 10, 30);
+
+            // Calculate time elapsed
+            var elapsedTime = (Date.now() - startTime) / 1000;
+
+            // Display time remaining
+            var timeRemaining = Math.max(0, gameDuration - elapsedTime);
+            ctx.fillText("Time: " + timeRemaining.toFixed(1) + "s", 10, 60);
+
+            character.x += vcxr;
+            character.x += vcxl;
+
+            // Request next animation frame if game is not over
+            if (timeRemaining > 0) {
+                requestAnimationFrame(updateCanvas);
+            } else {
+                // Game over, do something here
+                alert("Game over! Your final score is: " + score);
+                location.reload()
+            }
+        }
+
+        var startTime;
+
+        function startknapp() {
+            setTimeout(function () {
+                document.getElementById("Startknapp").style.background = "none"
+                document.getElementById("Startknapp").style.border = "none"
+                document.getElementById("Startknapp").style.left = "45%"
+                document.getElementById("Startknapp").innerHTML = "3";
+                setTimeout(function () {
+                    document.getElementById("Startknapp").innerHTML = "2";
+                    setTimeout(function () {
+                        document.getElementById("Startknapp").innerHTML = "1";
+                        setTimeout(function () {
+                            document.getElementById("Startknapp").innerHTML = "Go";
+                            setTimeout(function () {
+                                startTime = Date.now();
+                                document.getElementById("Startknapp").style.display = "none";
+                                updateCanvas(); // Assuming updateCanvas is defined elsewhere
+                            }, 1000);
+                        }, 1000);
+                    }, 1000);
+                }, 1000);
+            }, 200);
+        }
+
+    </script>
 </body>
+
 </html>
