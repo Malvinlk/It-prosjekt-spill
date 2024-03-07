@@ -9,6 +9,7 @@
     <link rel="icon" type="image/x-icon" href="bilder/catch.png">
 
     <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="info.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
@@ -17,8 +18,10 @@
     <header>
         <section class="meny">
             <div class="link">
-                <h2 class="hjemknapp"><a href="index.html"> Hjem</a></h2>
+                <h2 class="hjemknapp"><a href="index.html"><i class="fa-solid fa-house"></i></a></h2>
                 <h2 class="hvordan spille?"><a href="howtoplay.html"> Hvordan spille </a></h2>
+                <h2 class="quiz"><a href="#">Quiz</a></h2>
+                <h2><a href="#footer-main"> Om oss </a></h2>
             </div>
             <div>
                 <button onclick="lightmode()" class="ikonknapp sol"><i class="fa-regular fa-sun"
@@ -29,10 +32,10 @@
         </section>
     </header>
 
-    <main>
+    <main class="howmain">
         <div id="piler">
             <img src="bilder/arrows.png" alt="venstre og høyre piltast" id="pilknapper">
-            <p>Du beveger deg frem og tilbake ved hjelp av høyre og venstre piltast</p>
+            <p>Beveg deg frem og tilbake ved hjelp av høyre og venstre piltast</p>
         </div>
 
         <section>
@@ -41,6 +44,25 @@
             </div>
         </section>
     </main>
+
+    <footer id="footer-main">
+        <section class="footer-grid">
+            <div class="footer_omoss">
+                <h4>OM OSS</h4>
+                <p>
+                    På denne siden kan du lære mer om 2D-spill i itllegg til å være så heldig til å prøve ut et selv...
+                </p>
+            </div>
+            <div class="footer-container">
+                <h4>KONTAKT</h4>
+                <p>Du kan kontakte oss både på gmail og telefon linket nedenfor:</p>
+                <p>Tlf: spill@gmail.com</p>
+                <p>Tlf: 88888888</p>
+               
+            </div>
+            
+        </section>
+    </footer>
 
     <script src="javascript.js"></script>
     <script src="theme.js"></script>

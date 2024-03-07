@@ -17,11 +17,15 @@
     <header>
         <section class="meny">
             <div class="link">
-                <h2 class="hjemknapp"><a href="index.html"> Hjem</a></h2>
+                <h2 class="hjemknapp"><a href="index.html"><i class="fa-solid fa-house"></i></a></h2>
                 <h2 class="hvordan spille?"><a href="howtoplay.html"> Hvordan spille </a></h2>
                 <h2 class="quiz"><a href="#">Quiz</a></h2>
+                <h2><a href="#footer-main"> Om oss </a></h2>
             </div>
             <div>
+                <button onclick="sound()" class="ikonknapp lyd"><i class="fa-solid fa-volume-high" style="color: #fff;"></i></button>
+                <button onclick="mute()" class="ikonknapp ilyd"><i class="fa-solid fa-volume-xmark" style="color: #fff;"></i></button>
+
                 <button onclick="lightmode()" class="ikonknapp sol"><i class="fa-regular fa-sun"
                         style="color:#FFB700;"></i></button>
                 <button onclick="darkmode()" class="ikonknapp maane"><i class="fa-regular fa-moon"
@@ -30,17 +34,73 @@
         </section>
     </header>
 
-    <main>
+    <div class="music">
+        <div class="innermusic">
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/9by72PbEiZE?si=Zls_f_KodYfa2rxC" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <main class="forsidemain">
         <h1 class="overskrift">NAVN PÅ SPILL</h1>
         <button class="startbtn">Start spill</button>
     </main>
 
-    <section class="info">
+    <section class="grid-section">
 
+        <div>
+            <h2>2D-spill</h2>
+
+            <br>
+
+            <p>
+                2D-spill er todimensjonale videospill.<br>
+                Interaksjon med dataspillet foregår ved hjelp av en kontrollmekanisme, for eksempel mus og tastatur,
+                eller håndkontrollere som er laget spesielt for dataspill. For mobilspill foregår interaksjonen ved bruk
+                av knappene eller berøringsskjermen til mobiltelefonen. Det interaktive aspektet ved dataspill kalles
+                spillbarhet, og står i kontrast til de statiske elementene, som grafikk og lydspor.<br><br>
+
+                Dataspillindustrien er i dag en av verdens største underholdningsbransjer fra et økonomisk
+                perspektiv.<br><br>
+
+                På bildet kan du se spillet Donkey Kong, som var et av de første spillene fra Nintendo. Denne utgaven
+                fra 1982 viser helten Jumpman (som
+                i senere spill fikk navnet Mario) øverst til venstre; for å redde prinsessen (øverst i midten) må han
+                hoppe over tønnene som monsteret Donkey Kong (øverst til høyre) kaster mot ham.
+            </p>
+
+            <button class="quizbtn">Quiz</button>
+        </div>
+        <div>
+            <img src="bilder/DonkeyKong.jpg" alt="Donkey Kong" id="DonkeyKong">
+        </div>
     </section>
+
+    <footer id="footer-main">
+        <section class="footer-grid">
+            <div class="footer_omoss">
+                <h4>OM OSS</h4>
+                <p>
+                    På denne siden kan du lære mer om 2D-spill i itllegg til å være så heldig til å prøve ut et selv...
+                </p>
+            </div>
+            <div class="footer-container">
+                <h4>KONTAKT</h4>
+                <p>Du kan kontakte oss både på gmail og telefon linket nedenfor:</p>
+                <p>Tlf: spill@gmail.com</p>
+                <p>Tlf: 88888888</p>
+
+            </div>
+
+        </section>
+    </footer>
 
     <script src="javascript.js"></script>
     <script src="theme.js"></script>
+    <script src="bakgrunnsmusikk.js"></script>
 </body>
 
 </html>

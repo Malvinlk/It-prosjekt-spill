@@ -74,7 +74,6 @@ header {
 }
 
 header {
-    position: fixed;
     width: 100%;
 }
 
@@ -99,13 +98,14 @@ header a {
     flex-direction: row;
 }
 
-main {
+.forsidemain {
     display: flex;
     align-items: center;
     justify-content: center;
     background-image: url("bilder/forside.jpg");
     background-color: #cccccc;
-    height: 780px;
+    /* height: 780px; */
+    height: calc(100vh - 70px);
     background-size: cover;
 }
 
@@ -115,6 +115,22 @@ main {
     position: absolute;
 }
 
+.grid-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    padding: 40px;
+    height: 600px;
+    justify-content: center;
+}
+
+.grid-section div {
+    text-align: center;
+    padding: 20px;
+    align-self: center;
+    justify-self: center;
+
+}
 
 .startbtn {
     width: 250px;
@@ -135,6 +151,7 @@ main {
 #piler {
     display: grid;
     justify-content: center;
+    margin-top: 50px;
 }
 
 #piler p {
@@ -142,16 +159,19 @@ main {
     margin-top: 70px;
 }
 
+/*
 #pilknapper {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+*/
 
-.info {
-    height: 900px;
+.howmain {
+    height: 600px;
 }
+
 
 
 
@@ -184,12 +204,124 @@ main {
 .hjem-tekst h2 {
     font-size: var(--h2-font);
     margin: 1rem 0 2rem;
-    
+
 }
+
+#DonkeyKong {
+    border-radius: 5%;
+    width: 100%;
+}
+
+.quizbtn {
+    width: 150px;
+    height: 70px;
+    margin-top: 20px;
+    font-size: 20px;
+    border-radius: 80px;
+    border: none;
+    background-color: var(--calm-yellow);
+}
+
+.darkmode .quizbtn {
+    color: white;
+    background-color: var(--grey-blue);
+}
+
+#forsideid p {
+    color: var(--primary);
+    font-family: DGOR;
+}
+
+#andre-artister-section2 {
+    background: white;
+}
+
+.forside-konserter-section {
+    background-color: var(--primary);
+}
+
+#forside-overskrift-konserter span {
+    color: white;
+    text-shadow: 2px 0 var(--secondarydark), -2px 0 var(--secondarydark), 0 2px var(--secondarydark), 0 -2px var(--secondarydark),
+        1px 1px var(--secondarydark), -1px -1px var(--secondarydark), 1px -1px var(--secondarydark), -1px 1px var(--secondarydark);
+}
+
+#forside-overskrift-konserter h2 {
+    color: #3aa6d9;
+    text-shadow: 2px 0 var(--secondarydark), -2px 0 var(--secondarydark), 0 2px var(--secondarydark), 0 -2px var(--secondarydark),
+        1px 1px var(--secondarydark), -1px -1px var(--secondarydark), 1px -1px var(--secondarydark), -1px 1px var(--secondarydark);
+
+}
+
+.forside-konserter-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+    grid-gap: 1.5rem;
+}
+
+.forside-konserter-box {
+    text-align: center;
+    padding: 20px 30px;
+}
+
+.forside-konserter-box img {
+    width: 100%;
+    border-radius: 10%;
+}
+
+.forside-konserter-box h3 {
+    margin: 4px 0 10px;
+    color: #3aa6d9;
+    font-size: 1.2rem;
+    font-family: DGOR;
+
+}
+
+.forside-konserter-box p {
+    line-height: 1.7;
+    font-family: DGOR;
+    color: white;
+    text-shadow: 2px 0 var(--secondarydark), -2px 0 var(--secondarydark), 0 2px var(--secondarydark), 0 -2px var(--secondarydark),
+        1px 1px var(--secondarydark), -1px -1px var(--secondarydark), 1px -1px var(--secondarydark), -1px 1px var(--secondarydark);
+}
+
 /*SLUTT 2D-SPill eksempler*/
 
-.eksempler{
-    background-image: none;
-    background-color: var(--pastel-yellow);
+
+
+
+#footer-main {
+    background-color: var(--calm-yellow);
+    color: black;
+    padding: 20px;
 }
 
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 10px;
+    margin: 0 auto;
+    max-width: 100%;
+    padding-left: 50px;
+}
+
+footer section {
+    padding: 50px 0;
+    border-bottom: none;
+}
+
+.footer_symboler {
+    padding: 20px;
+    align-items: center;
+    font-size: 30px;
+}
+
+.darkmode #footer-main {
+    background-color: var(--light-grey-blue);
+    color: white;
+}
+
+iframe {
+    display: none;
+}
