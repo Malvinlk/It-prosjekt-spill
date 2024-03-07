@@ -169,7 +169,8 @@ header a {
 */
 
 .howmain {
-    height: 600px;
+    height: auto;
+    margin-bottom: 100px;
 }
 
 
@@ -323,5 +324,13 @@ footer section {
 }
 
 iframe {
+    display: none;
+}
+
+.lyd {
+    display: inline-block;
+}
+
+.ilyd {
     display: none;
 }

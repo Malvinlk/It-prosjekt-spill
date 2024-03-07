@@ -1,13 +1,9 @@
-
-var musikk = document.getElementsByClassName("music")[0],
-    imusikk = document.getElementsByClassName("innermusic")[0];
-
-function sound(x) {
-    x.classList.toggle("fa-solid fa-volume-xmark");
-}
+const musikk = document.getElementsByClassName("music")[0];
+const imusikk = document.getElementsByClassName("innermusic")[0];
+const spillKnapp = document.querySelector(".ikonknapp.lyd");
+const muteKnapp = document.querySelector(".ikonknapp.ilyd");
 
 function sound() {
-    document.body.classList.remove("ilyd")
     musikk.classList.add("active");
 
     let iframe = document.createElement("iframe");
@@ -19,12 +15,18 @@ function sound() {
     iframe.classList.add("musicv");
 
     imusikk.append(iframe);
+
+    // Skjule "spill"-knappen, OG vis "mute"-knappen
+    spillKnapp.style.display = "none";
+    muteKnapp.style.display = "inline-block";
 }
 
 function mute() {
-    document.body.classList.add("ilyd")
     var musikkv = document.getElementsByClassName("musicv")[0];
     musikk.classList.remove("active");
 
     musikkv.remove();
+    // Vise "spill"-knappen, OG skjule "mute"-knappen
+    spillKnapp.style.display = "inline-block";
+    muteKnapp.style.display = "none";
 }
