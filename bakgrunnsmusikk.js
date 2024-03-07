@@ -7,7 +7,7 @@ function sound() {
     musikk.classList.add("active");
 
     let iframe = document.createElement("iframe");
-    iframe.setAttribute("src", "https://www.youtube.com/embed/9by72PbEiZE?si=Zls_f_KodYfa2rxC&autoplay=1&rel=0");
+    iframe.setAttribute("src", "https://www.youtube.com/embed/68ugkg9RePc?si=ysy0IdXpoMxJbyyT&autoplay=1&rel=0");
     /* &autoplay=1&rel=0 */
 
     iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
