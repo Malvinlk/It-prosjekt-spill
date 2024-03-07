@@ -40,12 +40,106 @@
                 -1px 1px 0 #000,
                 1px 1px 0 #000;
         }
+
+        #Shop_knapp {
+            position: absolute;
+            top: 4%;
+            right: 4%;
+            border-radius: 10%;
+            background: lightgreen;
+            font-size: 80px;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            text-shadow:
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        #Total_score {
+            position: absolute;
+            top: 4%;
+            left: 4%;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .shop-overskrift {
+            text-align: center;
+        }
+        
+        .shop-overskrift span {
+            color: black;
+            font-weight: 600;
+            font-size: 2.5rem;
+        }
+        
+        .shop-overskrift h2 {
+            font-size: 5rem;
+        }
+        
+        #shop-overskrift-figurer h2 {
+            color: black;
+        }
+        
+        #shop-overskrift-figurer span {
+            color: white;
+        }
+        
+        .shop-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 2%;
+        }
+        
+        .shop-grid img {
+            width: 90%;
+        }
+        
+        .shop-grid h2 {
+            text-align: center;
+            color: black;            
+        }
+ 
+        .nederste {
+            margin-bottom: 100px;
+        }
+        #Shop{
+            display: none;
+            background-color: lightcyan;
+            padding-bottom: 40px;
+        }
     </style>
 </head>
 
 <body>
-    <canvas id="gameCanvas" width="1250" height="530"></canvas>
+    <canvas id="gameCanvas" width="1250" height="530px"></canvas>
     <button id="Startknapp" onclick="startknapp()">Start</button>
+    <button id="Shop_knapp" onclick="Shop()">Shop</button>
+    <div id="Total_score">0</div>
+
+    <section id="Shop">
+        <div class="shop-overskrift" id="shop-overskrift-karakterer">
+            <Span>Shop</Span>
+            <h2>Her kan du bytte til ulike figurer </h2>
+        </div>
+        <div class="shop-grid">
+            <div>
+                <img src="bilder/figur.png" alt="karakter">
+                <h2>Figur: XXX</h2>
+            </div>
+            <div>
+                <img src="bilder/figur.png" alt="karakter">
+                <h2>Figur: XXX</h2>
+            </div>
+            <div>
+                <img src="bilder/figur.png" alt="karakter">
+                <h2>Figur: XXX</h2>
+            </div>
+        </div>
+    </section>
+    
 
     <script>
         var canvas = document.getElementById("gameCanvas");
@@ -171,22 +265,27 @@
 
 
         function checkCollision(obj) {
-            if (character.x < obj.x + obj.width &&
-                character.x + character.width > obj.x &&
-                character.y < obj.y + obj.height &&
-                character.y + character.height > obj.y) {
+            if (character.x+10 < obj.x + obj.width &&
+                character.x+10 + character.width > obj.x &&
+                character.y+10 < obj.y + obj.height &&
+                character.y+10 + character.height > obj.y) {
                 if (obj === object) {
                     score += 5;
                 } else if (obj === object2) {
                     score += 10;
                 } else if (obj === object3 || obj === object4) {
-                    score -= 50;
+                    score = 0;
+                    alert("Game over! Du traff en bombe din dumme faen!: " + score);
+                    audio.pause();
+                    location.reload()
                 }
                 obj.x = Math.random() * 1200;
                 obj.y = 0;
                 obj.speed = Math.random() * 2 + 1.3
             }
         }
+
+        let Total_score = 0
 
         function updateCanvas() {
             // Clear canvas
@@ -232,11 +331,23 @@
                 requestAnimationFrame(updateCanvas);
             } else {
                 // Game over, do something here
-                alert("Game over! Your final score is: " + score);
-                location.reload()
+                alert("Game over! HAHA tiden er ute og du fikk kun: " + score + " i score");
+                audio.pause();
+                // Update Total_score
+                Total_score += score;
+
+                // Store Total_score in localStorage
+                localStorage.setItem("Total_score", Total_score);
+
+                // Display Total_score
+                document.getElementById("Total_score").innerHTML = Total_score;
+
+                // Reload page
+                location.reload();
             }
         }
 
+        var audio = new Audio("Lyd/spill_musikk_2.mp3");
         var startTime;
 
         function startknapp() {
@@ -245,6 +356,9 @@
                 document.getElementById("Startknapp").style.border = "none"
                 document.getElementById("Startknapp").style.left = "45%"
                 document.getElementById("Startknapp").innerHTML = "3";
+                document.getElementById("Shop_knapp").style.display = "none"
+                document.getElementById("Total_score").style.display = "none"
+
                 setTimeout(function () {
                     document.getElementById("Startknapp").innerHTML = "2";
                     setTimeout(function () {
@@ -252,6 +366,7 @@
                         setTimeout(function () {
                             document.getElementById("Startknapp").innerHTML = "Go";
                             setTimeout(function () {
+                                audio.play();
                                 startTime = Date.now();
                                 document.getElementById("Startknapp").style.display = "none";
                                 updateCanvas(); // Assuming updateCanvas is defined elsewhere
@@ -262,6 +377,20 @@
             }, 200);
         }
 
+        window.onload = function () {
+            if (localStorage.getItem("Total_score")) {
+                Total_score = parseInt(localStorage.getItem("Total_score"));
+                document.getElementById("Total_score").innerHTML = Total_score;
+            }
+        };
+        function Shop() {
+            document.getElementById("Shop_knapp").style.display = "none"
+            document.getElementById("Total_score").style.display = "none"
+            document.getElementById("Startknapp").style.display = "none"
+            document.getElementById("gameCanvas").style.display = "none"
+            document.getElementById("Shop").style.display = "block"
+
+        }
     </script>
 </body>
 
