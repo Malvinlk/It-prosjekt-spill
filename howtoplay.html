@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hvordan spille</title>
+    <title>hvordan spille</title>
 
     <link rel="icon" type="image/x-icon" href="bilder/catch.png">
 
@@ -24,6 +24,11 @@
                 <h2><a href="#footer-main"> Om oss </a></h2>
             </div>
             <div>
+                <button onclick="sound()" class="ikonknapp lyd"><i class="fa-solid fa-volume-high"
+                        style="color: #fff;"></i></button>
+                <button onclick="mute()" class="ikonknapp ilyd"><i class="fa-solid fa-volume-xmark"
+                        style="color: #fff;"></i></button>
+
                 <button onclick="lightmode()" class="ikonknapp sol"><i class="fa-regular fa-sun"
                         style="color:#FFB700;"></i></button>
                 <button onclick="darkmode()" class="ikonknapp maane"><i class="fa-regular fa-moon"
@@ -31,6 +36,15 @@
             </div>
         </section>
     </header>
+
+    <div class="music">
+        <div class="innermusic">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/68ugkg9RePc?si=ysy0IdXpoMxJbyyT"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </div>
 
     <main class="howmain">
         <div id="piler">
@@ -68,14 +82,15 @@
                 <p>Du kan kontakte oss både på gmail og telefon linket nedenfor:</p>
                 <p>Tlf: spill@gmail.com</p>
                 <p>Tlf: 88888888</p>
-               
+
             </div>
-            
+
         </section>
     </footer>
 
     <script src="javascript.js"></script>
     <script src="theme.js"></script>
+    <script src="bakgrunnsmusikk.js"></script>
 </body>
 
 </html>
