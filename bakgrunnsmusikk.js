@@ -1,13 +1,7 @@
-
 var musikk = document.getElementsByClassName("music")[0],
     imusikk = document.getElementsByClassName("innermusic")[0];
 
-function sound(x) {
-    x.classList.toggle("fa-solid fa-volume-xmark");
-}
-
 function sound() {
-    document.body.classList.remove("ilyd")
     musikk.classList.add("active");
 
     let iframe = document.createElement("iframe");
@@ -22,7 +16,6 @@ function sound() {
 }
 
 function mute() {
-    document.body.classList.add("ilyd")
     var musikkv = document.getElementsByClassName("musicv")[0];
     musikk.classList.remove("active");
 
