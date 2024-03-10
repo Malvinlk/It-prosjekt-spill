@@ -41,7 +41,7 @@ const quizData = [
     },
     {
         spørsmål: "Hva er navnet på det klassiske 2D-plattformspillet der du styrer en liten ridder som utforsker en mørk og farlig verden?",
-        a: "Hollow night",
+        a: "Hollow Knight",
         b: "Cuphead",
         c: "Ori and the blind forest",
         d: "Shovel knight",
