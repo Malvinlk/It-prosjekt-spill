@@ -185,12 +185,19 @@ header a {
     width: 500px;
 } */
 
+#how-overskrift{
+    display: flex;
+    justify-content: center;
+}
+
 .howmain {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
+    height: 1000px;
     gap: 5%;
-    margin: 0 50px;
+    margin-top: 50px;
+
 }
 
 .howmain img{
