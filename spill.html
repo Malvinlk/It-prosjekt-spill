@@ -170,7 +170,16 @@
         }
         #Du_vant_premie {
             display: none;
+            width: 100%;
+            background-color: white;
+            height: 100%;
+            align-items: center;
         }
+        #Du_vant_premie img{
+            width: 65%;
+            margin-left: 20%;
+        }
+        
         
     </style>
 </head>
@@ -211,7 +220,7 @@
     <img src="bilder/Fail_video.gif" id="Du_tapte_video">
 
     <div id="Du_vant_premie">
-        <img src="you_won.gif">
+        <img src="bilder/you_won.gif">
     </div>
 
 
@@ -505,10 +514,10 @@
             }
         });
 
-        addEventListener("keydown", function (event) {
-            keysPressed[event.key] = true;
+        addEventListener("keydown", function (a) {
+            keysPressed[a.key] = true;
 
-            if (keysPressed['f'] && keysPressed['a'] && keysPressed['n'] && keysPressed['g'] && keysPressed['t'] && keysPressed['s'] && keysPressed['i']) {
+            if (keysPressed['f'] && keysPressed['a'] && keysPressed['n']) {
                 Du_fant_det();
             }
         });
@@ -516,6 +525,9 @@
         // Lytt etter når tastene slippes
         addEventListener("keyup", function (event) {
             delete keysPressed[event.key];
+        });
+        addEventListener("keyup", function (a) {
+            delete keysPressed[a.key];
         });
 
         function Du_fant_det() {
