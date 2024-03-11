@@ -7,7 +7,7 @@
     <title>Canvas Game</title>
     <style>
         canvas {
-            
+
             /*display: flex;*/
             align-items: center;
             justify-content: center;
@@ -98,6 +98,7 @@
             width: 90%;
             height: 100%;
         }
+
         .shop-grid div {
             display: flex;
             align-items: center;
@@ -118,6 +119,7 @@
             background-color: lightcyan;
             padding-bottom: 40px;
         }
+
         #tilbakestill {
             position: absolute;
             bottom: 4%;
@@ -132,8 +134,9 @@
                 -1px -1px 0 #000,
                 1px -1px 0 #000,
                 -1px 1px 0 #000,
-                1px 1px 0 #000;  
+                1px 1px 0 #000;
         }
+
         #tilbake_til_start {
             position: fixed;
             left: 5px;
@@ -144,60 +147,82 @@
             color: white;
             font-size: 22px;
         }
-        #kjøp_skin3, #kjøp_skin2, #kjøp_skin1 {
+
+        #kjøp_skin3,
+        #kjøp_skin2,
+        #kjøp_skin1 {
             padding: 6px;
             font-size: 22px;
             border-radius: 10%;
             background-color: black;
             color: white;
-           
+
         }
+
         #Du_tapte_video {
             display: none;
             background-color: #000;
             width: 100%;
         }
-        html {
-            background-color: rgba(147,137,66,255);
+
+        #body {
+            background-color: rgba(147, 137, 66, 255);
         }
+        #Du_vant_premie {
+            display: none;
+            width: 100%;
+            background-color: white;
+            height: 100%;
+            align-items: center;
+        }
+        #Du_vant_premie img{
+            width: 65%;
+            margin-left: 20%;
+        }
+        
+        
     </style>
 </head>
 
-<body>
+<body id="body">
     <div id="spill">
-    <canvas id="gameCanvas" width="1250" height="530px"></canvas>
-    <button id="Startknapp" onclick="startknapp()">Start</button>
-    <button id="Shop_knapp" onclick="Shop()">Shop</button>
-    <div id="Total_score">0</div>
+        <canvas id="gameCanvas" width="1250" height="530px"></canvas>
+        <button id="Startknapp" onclick="startknapp()">Start</button>
+        <button id="Shop_knapp" onclick="Shop()">Shop</button>
+        <div id="Total_score">0</div>
 
-    <section id="Shop">
-        <div class="shop-overskrift" id="shop-overskrift-karakterer">
-            <Span>Shop</Span>
-            <h2>Her kan du bytte til ulike figurer </h2>
-        </div>
-        <div class="shop-grid">
-            <div>   
-                <img src="bilder/Figur2.png" alt="karakter">
-                <h2>Figur 2</h2>
-                <button id="kjøp_skin1" onclick="kjøp1()">200</button>
+        <section id="Shop">
+            <div class="shop-overskrift" id="shop-overskrift-karakterer">
+                <Span>Shop</Span>
+                <h2>Her kan du bytte til ulike figurer </h2>
             </div>
-            <div>
-                <img src="bilder/Figur3.png" alt="karakter">
-                <h2>Figur 3</h2>
-                <button id="kjøp_skin2" onclick="kjøp2()">400</button>
+            <div class="shop-grid">
+                <div>
+                    <img src="bilder/Figur2.png" alt="karakter">
+                    <h2>Figur 2</h2>
+                    <button id="kjøp_skin1" onclick="kjøp1()">200</button>
+                </div>
+                <div>
+                    <img src="bilder/Figur3.png" alt="karakter">
+                    <h2>Figur 3</h2>
+                    <button id="kjøp_skin2" onclick="kjøp2()">400</button>
+                </div>
+                <div>
+                    <img src="bilder/figur4.png" alt="karakter">
+                    <h2>Rasmus</h2>
+                    <button id="kjøp_skin3" onclick="kjøp3()">1000</button>
+                </div>
+                <button id="tilbake_til_start" onclick="tilbake_til_start()">Tilbake</button>
             </div>
-            <div>
-                <img src="bilder/figur4.png" alt="karakter">
-                <h2>Rasmus</h2>
-                <button id="kjøp_skin3" onclick="kjøp3()">1000</button>
-            </div>
-            <button id="tilbake_til_start" onclick="tilbake_til_start()">Tilbake</button>
-        </div>
-    </section>
-    <button onclick="tilbakestill_poeng()" id="tilbakestill">tilbakestill_poeng</button>
+        </section>
+        <button onclick="tilbakestill_poeng()" id="tilbakestill">tilbakestill_poeng</button>
     </div>
     <img src="bilder/Fail_video.gif" id="Du_tapte_video">
-    
+
+    <div id="Du_vant_premie">
+        <img src="bilder/you_won.gif">
+    </div>
+
 
 
 
@@ -337,29 +362,29 @@
                 } else if (obj === object3) {
                     score = 0;
                     audio.pause();
-                    
+
                     document.getElementById("spill").style.display = "none"
                     document.getElementById("Du_tapte_video").style.display = "block"
                     audio = new Audio("Lyd/explosion_2.mp3");
                     audio.play()
-                    setTimeout(function(){
+                    setTimeout(function () {
                         location.reload()
-                    },6000)
-                    
-                    
+                    }, 6000)
+
+
                 }
                 else if (obj === object4) {
                     score = 0;
                     //alert("Game over! Du traff en bombe din dumme faen!");
                     audio.pause();
-                    
+
                     document.getElementById("spill").style.display = "none"
                     document.getElementById("Du_tapte_video").style.display = "block"
                     audio = new Audio("Lyd/explosion_2.mp3");
                     audio.play()
-                    setTimeout(function(){
+                    setTimeout(function () {
                         location.reload()
-                    },6000)
+                    }, 6000)
 
                 }
                 obj.x = Math.random() * 1200;
@@ -473,6 +498,7 @@
             document.getElementById("gameCanvas").style.display = "none"
             document.getElementById("tilbakestill").style.display = "none"
             document.getElementById("Shop").style.display = "block"
+            document.getElementById("body").style.backgroundColor = "lightcyan"
 
         }
         var keysPressed = {}; // Lagrer tilstand av tastene som er trykket ned
@@ -488,10 +514,28 @@
             }
         });
 
+        addEventListener("keydown", function (a) {
+            keysPressed[a.key] = true;
+
+            if (keysPressed['f'] && keysPressed['a'] && keysPressed['n']) {
+                Du_fant_det();
+            }
+        });
+
         // Lytt etter når tastene slippes
         addEventListener("keyup", function (event) {
             delete keysPressed[event.key];
         });
+        addEventListener("keyup", function (a) {
+            delete keysPressed[a.key];
+        });
+
+        function Du_fant_det() {
+            document.getElementById("spill").style.display = "none"
+            document.getElementById("Du_vant_premie").style.display = "block"
+            audio = new Audio("Lyd/gratulerer.mp3");
+            audio.play()
+        }
 
         function fler_poeng() {
             Total_score += 100;
@@ -502,7 +546,7 @@
             // Display Total_score
             document.getElementById("Total_score").innerHTML = Total_score;
         }
-        function tilbakestill_poeng(){
+        function tilbakestill_poeng() {
             Total_score = 0;
 
             // Store Total_score in localStorage
@@ -511,15 +555,16 @@
             // Display Total_score
             document.getElementById("Total_score").innerHTML = Total_score;
         }
-        function tilbake_til_start(){
+        function tilbake_til_start() {
             document.getElementById("Shop_knapp").style.display = "block"
             document.getElementById("Startknapp").style.display = "block"
             document.getElementById("gameCanvas").style.display = "block"
             document.getElementById("tilbakestill").style.display = "block"
             document.getElementById("Shop").style.display = "none"
+            document.getElementById("body").style.backgroundColor = "rgba(147,137,66,255)"
         }
-        function kjøp1(){
-            if (Total_score>=200){
+        function kjøp1() {
+            if (Total_score >= 200) {
                 Total_score -= 200
                 localStorage.setItem("Total_score", Total_score);
                 document.getElementById("Total_score").innerHTML = Total_score;
@@ -527,17 +572,17 @@
                 document.getElementById("kjøp_skin1").innerHTML = "Kjøpt"
 
                 character.img.src = "bilder/Figur2n.png";
-                
+
             }
             else {
                 document.getElementById("kjøp_skin1").innerHTML = "Fattiggris"
-                setTimeout( function(){
+                setTimeout(function () {
                     document.getElementById("kjøp_skin1").innerHTML = "200"
-                },1000);
+                }, 1000);
             }
         }
-        function kjøp2(){
-            if (Total_score>=400){
+        function kjøp2() {
+            if (Total_score >= 400) {
                 Total_score -= 400
                 localStorage.setItem("Total_score", Total_score);
                 document.getElementById("Total_score").innerHTML = Total_score;
@@ -548,13 +593,13 @@
             }
             else {
                 document.getElementById("kjøp_skin2").innerHTML = "Fattiggris"
-                setTimeout( function(){
+                setTimeout(function () {
                     document.getElementById("kjøp_skin2").innerHTML = "400"
-                },1000);
+                }, 1000);
             }
         }
-        function kjøp3(){
-            if (Total_score>=1000){
+        function kjøp3() {
+            if (Total_score >= 1000) {
                 Total_score -= 1000
                 localStorage.setItem("Total_score", Total_score);
                 document.getElementById("Total_score").innerHTML = Total_score;
@@ -565,9 +610,9 @@
             }
             else {
                 document.getElementById("kjøp_skin3").innerHTML = "Fattiggris"
-                setTimeout( function(){
+                setTimeout(function () {
                     document.getElementById("kjøp_skin3").innerHTML = "1000"
-                },1000);
+                }, 1000);
             }
         }
 
