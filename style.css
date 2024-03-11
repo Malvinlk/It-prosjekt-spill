@@ -378,6 +378,15 @@ iframe {
     color: black;
 }
 
+.quizbtn a {
+    text-decoration: none;
+    color: black;
+}
+
 .darkmode .startbtn a {
+    color: white;
+}
+
+.darkmode .quizbtn a {
     color: white;
 }
