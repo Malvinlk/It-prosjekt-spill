@@ -193,6 +193,10 @@ header a {
     margin: 0 50px;
 }
 
+.howmain img{
+    width: 450px;
+}
+
 .spillere_galleri li, h1 {
     font-size: 23px;
 
