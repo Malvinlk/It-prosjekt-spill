@@ -1,0 +1,107 @@
+/*Quiz CSS del*/
+
+*{
+    box-sizing: border-box;
+}
+
+:root {
+    --darkest-blue: #012A4A;
+    --dark-blue: #013A63;
+    --some-dark-blue: #01497C;
+    --grey-blue: #2A6F97;
+    --light-grey-blue: #468FAF;
+    --light-blue: #89C2D9;
+    --lightest-blue: #A9D6E5;
+
+    --darkest-yellow: #FFB700;
+    --dark-yellow: #FFC300;
+    --yellow: #FFD000;
+    --light-yellow: #FFDD00;
+    --lighest-yellow: #FFEA00;
+    --pastel-yellow: #fcf6bd;
+    --calm-yellow: #ffd972;
+
+    --stor-font: 5rem;
+    --h2-font: 2.5rem;
+    --p-font: 1.06rem;
+}
+
+.quiz-main {
+    background-color: var(--pastel-yellow);
+    background-image: linear-gradient(315deg, var(--pastel-yellow) 0%, #b8c6db 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.quiz-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+    width: 600px;
+    overflow: hidden;
+}
+
+.quiz-header {
+    padding: 4rem;
+}
+
+.quiz-container h2 {
+    padding: 1rem;
+    text-align: center;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: var(--p-font);
+    margin: 1rem 0;
+}
+
+ul li label {
+    cursor: pointer;
+}
+
+.quiz-container button {
+    background-color: var(--calm-yellow);
+    color: #FFF;
+    border: none;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--p-font);
+    padding: 1.3rem;
+}
+
+.darkmode .quiz-container button {
+    background-color: var(--light-grey-blue);
+}
+
+.quiz-container button:hover {
+    background-color: var(--calm-yellow);
+}
+
+.darkmode .quiz-container button:hover {
+    background-color: var(--light-grey-blue);
+}
+
+.quiz-container button:focus {
+    outline: none;
+    background-color: var(--dark-yellow);
+
+}
+
+.darkmode .quiz-container button:focus {
+    background-color: var(--grey-blue);
+}
+
+.darkmode .quiz-main{
+    color:black;
+}
