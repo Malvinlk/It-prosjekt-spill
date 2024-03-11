@@ -1,0 +1,185 @@
+canvas {
+
+    /*display: flex;*/
+    align-items: center;
+    justify-content: center;
+    background-image: url(bilder/bakgrunn_spill.jpg);
+    background-repeat: repeat-x;
+    background-size: contain;
+    width: 100%;
+    transition: 0.2s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#Startknapp {
+    position: absolute;
+    top: 25%;
+    left: 38%;
+    border-radius: 10%;
+    background: lightcyan;
+    font-size: 120px;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+#Shop_knapp {
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    border-radius: 10%;
+    background: lightgreen;
+    font-size: 80px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+#Total_score {
+    position: absolute;
+    top: 10%;
+    left: 4%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#hjemknapp {
+    position: absolute;
+    top: 4%;
+    left: 4%;
+}
+
+#hjemknapp a {
+    color: black;
+}
+
+.shop-overskrift {
+    text-align: center;
+}
+
+.shop-overskrift span {
+    color: black;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+.shop-overskrift h2 {
+    font-size: 5rem;
+}
+
+#shop-overskrift-figurer h2 {
+    color: black;
+}
+
+#shop-overskrift-figurer span {
+    color: white;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2%;
+}
+
+.shop-grid img {
+    width: 90%;
+    height: 100%;
+}
+
+.shop-grid div {
+    display: flex;
+    align-items: center;
+    flex-direction: column
+}
+
+.shop-grid h2 {
+    text-align: center;
+    color: black;
+}
+
+.nederste {
+    margin-bottom: 100px;
+}
+
+#Shop {
+    display: none;
+    background-color: lightcyan;
+    padding-bottom: 40px;
+}
+
+#tilbakestill {
+    position: absolute;
+    bottom: 4%;
+    right: 4%;
+    border-radius: 10%;
+    background: lightcyan;
+    font-size: 40px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+#tilbake_til_start {
+    position: fixed;
+    left: 5px;
+    bottom: 5px;
+    padding: 10px;
+    border-radius: 5%;
+    background-color: #000;
+    color: white;
+    font-size: 22px;
+}
+
+#kjøp_skin3,
+#kjøp_skin2,
+#kjøp_skin1 {
+    padding: 6px;
+    font-size: 22px;
+    border-radius: 10%;
+    background-color: black;
+    color: white;
+
+}
+
+#Du_tapte_video {
+    display: none;
+    background-color: #000;
+    width: 100%;
+}
+
+#body {
+    background-color: rgba(147, 137, 66, 255);
+}
+
+#Du_vant_premie {
+    display: none;
+    width: 100%;
+    background-color: white;
+    height: 100%;
+    align-items: center;
+}
+
+#Du_vant_premie img {
+    width: 65%;
+    margin-left: 20%;
+}
