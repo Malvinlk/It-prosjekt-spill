@@ -183,3 +183,17 @@ canvas {
     width: 65%;
     margin-left: 20%;
 }
+a {
+    text-decoration: none;
+    color: white;
+}
+#hjemknapp {
+    padding: 6px;
+    font-size: 22px;
+    border-radius: 10%;
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
