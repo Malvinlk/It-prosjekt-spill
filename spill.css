@@ -52,20 +52,10 @@ canvas {
 
 #Total_score {
     position: absolute;
-    top: 10%;
+    top: 4%;
     left: 4%;
     font-size: 20px;
     font-weight: bold;
-}
-
-#hjemknapp {
-    position: absolute;
-    top: 4%;
-    left: 4%;
-}
-
-#hjemknapp a {
-    color: black;
 }
 
 .shop-overskrift {
