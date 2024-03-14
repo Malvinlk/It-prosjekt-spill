@@ -188,7 +188,13 @@ header a {
 #how-overskrift{
     display: flex;
     justify-content: center;
+    margin: 2rem auto;
+    /* background-color: var(--calm-yellow); */
 }
+
+/* .darkmode #how-overskrift{
+    background-color: var(--some-dark-blue);
+} */
 
 .howmain {
     display: grid;
@@ -216,13 +222,13 @@ header a {
 }
 
 
-.spillere_galleri div {
+/* .spillere_galleri div {
     background-color: var(--lighest-yellow);
-}
+} */
 
-.spillere_galleri img{
+/* .spillere_galleri img{
     width: 400px;
-}
+} */
 
 
 
@@ -290,26 +296,26 @@ header a {
     background-color: var(--primary);
 }
 
-#forside-overskrift-konserter span {
+/* #forside-overskrift-konserter span {
     color: white;
     text-shadow: 2px 0 var(--secondarydark), -2px 0 var(--secondarydark), 0 2px var(--secondarydark), 0 -2px var(--secondarydark),
         1px 1px var(--secondarydark), -1px -1px var(--secondarydark), 1px -1px var(--secondarydark), -1px 1px var(--secondarydark);
-}
+} */
 
-#forside-overskrift-konserter h2 {
+/* #forside-overskrift-konserter h2 {
     color: #3aa6d9;
     text-shadow: 2px 0 var(--secondarydark), -2px 0 var(--secondarydark), 0 2px var(--secondarydark), 0 -2px var(--secondarydark),
         1px 1px var(--secondarydark), -1px -1px var(--secondarydark), 1px -1px var(--secondarydark), -1px 1px var(--secondarydark);
 
-}
+} */
 
-.forside-konserter-container {
+.eksempler-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, auto));
     grid-gap: 1.5rem;
 }
 
-.forside-konserter-box {
+.eksempler-box {
     text-align: center;
     padding: 20px 30px;
 }
@@ -319,18 +325,18 @@ header a {
     border-radius: 10%;
 }
 
-.forside-konserter-box h3 {
+/* .forside-konserter-box h3 {
     margin: 4px 0 10px;
     color: #3aa6d9;
     font-size: 1.2rem;
     font-family: DGOR;
 
-}
+} */
 
 .forside-konserter-box p {
-    line-height: 1.7;
+    /* line-height: 1.7;
     font-family: DGOR;
-    color: white;
+    color: white; */
     text-shadow: 2px 0 var(--secondarydark), -2px 0 var(--secondarydark), 0 2px var(--secondarydark), 0 -2px var(--secondarydark),
         1px 1px var(--secondarydark), -1px -1px var(--secondarydark), 1px -1px var(--secondarydark), -1px 1px var(--secondarydark);
 }
