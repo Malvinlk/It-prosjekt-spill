@@ -10,8 +10,6 @@ function sound() {
 
     iframe.setAttribute("allow", "autoplay");
 
-    iframe.classList.add("musicv");
-
     imusikk.append(iframe);
 
     // Skjule "spill"-knappen, OG vis "mute"-knappen
@@ -22,7 +20,6 @@ function sound() {
 function mute() {
     const musikkv = document.getElementsByClassName("musicv")[0];
 
-    musikkv.remove();
     // Vise "spill"-knappen, OG skjule "mute"-knappen
     spillKnapp.style.display = "inline-block";
     muteKnapp.style.display = "none";
