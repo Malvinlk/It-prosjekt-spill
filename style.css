@@ -292,9 +292,9 @@ header a {
     background: white;
 }
 
-.forside-konserter-section {
+/* .forside-konserter-section {
     background-color: var(--primary);
-}
+} */
 
 /* #forside-overskrift-konserter span {
     color: white;
@@ -320,7 +320,7 @@ header a {
     padding: 20px 30px;
 }
 
-.forside-konserter-box img {
+.eksempler-box img {
     width: 100%;
     border-radius: 10%;
 }
@@ -333,7 +333,7 @@ header a {
 
 } */
 
-.forside-konserter-box p {
+.eksempler-box p {
     /* line-height: 1.7;
     font-family: DGOR;
     color: white; */
